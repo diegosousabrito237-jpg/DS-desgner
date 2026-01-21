@@ -2,128 +2,77 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xr Studio - Designer Gráfico</title>
 
 <style>
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0e0e0e;
+    font-family: Arial, sans-serif;
+    background:#0f172a;
     color:#fff;
 }
 
 header{
-    padding:30px;
+    padding:40px;
     text-align:center;
-    background:#111;
-}
-
-header h1{
-    margin:0;
-    color:#00b3ff;
+    background:#020617;
 }
 
 section{
     padding:40px 20px;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
 
 h2{
-    color:#00b3ff;
-    margin-bottom:20px;
+    text-align:center;
+    margin-bottom:10px;
 }
 
-/* PORTFOLIO GRID */
 .portfolio{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
     gap:20px;
+    margin-top:30px;
 }
 
 .portfolio img{
     width:100%;
-    border-radius:10px;
-    cursor:pointer;
+    border-radius:12px;
     transition:0.3s;
-    border:2px solid #222;
+    box-shadow:0 0 10px rgba(0,0,0,.5);
 }
 
 .portfolio img:hover{
     transform:scale(1.05);
-    border-color:#00b3ff;
 }
 
-/* PREÇOS */
-.precos{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:30px;
 }
 
-.preco-box{
-    background:#161616;
+.card{
+    background:#1e293b;
     padding:20px;
-    border-radius:10px;
-    min-width:180px;
+    border-radius:12px;
     text-align:center;
-    border:1px solid #222;
+    font-weight:bold;
 }
 
 footer{
-    background:#111;
-    text-align:center;
+    background:#020617;
     padding:20px;
-    margin-top:40px;
-    color:#aaa;
+    text-align:center;
+    margin-top:50px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
     <h1>Xr Studio</h1>
-    <p>Designer Gráfico • Artes para redes sociais • Flyers • Identidade visual</p>
-    <p>Instagram: <strong>@diegosousaxr</strong></p>
-</header>
-
-<section>
-    <h2>Serviços</h2>
-    <ul>
-        <li>Flyers esportivos</li>
-        <li>Posts para Instagram</li>
-        <li>Banners promocionais</li>
-        <li>Identidade visual básica</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Portfólio</h2>
-
-    <div class="portfolio">
-        <img src="img/flyer1.jpg" alt="Flyer 1">
-        <img src="img/flyer2.jpg" alt="Flyer 2">
-        <img src="img/flyer3.jpg" alt="Flyer 3">
-        <img src="img/flyer4.jpg" alt="Flyer 4">
-        <img src="img/flyer5.jpg" alt="Flyer 5">
-        <img src="img/flyer6.jpg" alt="Flyer 6">
-    </div>
-</section>
-
-<section>
-    <h2>Preços base</h2>
-
-    <div class="precos">
-        <div class="preco-box">Flyer simples<br><strong>R$ 25</strong></div>
-        <div class="preco-box">Post social<br><strong>R$ 30</strong></div>
-        <div class="preco-box">Flyer esportivo<br><strong>R$ 40</strong></div>
-    </div>
-</section>
-
-<footer>
-    © 2026 - Xr Studio | @diegosousaxr
-</footer>
-
-</body>
-</html>
+    <p>Designer Gráfico | Instagram: <b>@diegosous

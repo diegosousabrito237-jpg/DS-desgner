@@ -5,68 +5,68 @@
 <title>Xr Studio - Designer Gráfico</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
 body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f172a;
-    color:#fff;
+  background:#0e1624;
+  color:#fff;
 }
 
 header{
-    padding:40px;
-    text-align:center;
-    background:#020617;
+  background:#0b1c3a;
+  padding:25px;
+  text-align:center;
 }
 
 section{
-    padding:40px 20px;
-    max-width:1200px;
-    margin:auto;
+  padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
 h2{
-    text-align:center;
-    margin-bottom:10px;
+  margin-bottom:15px;
+  color:#4da3ff;
+}
+
+.servicos span{
+  display:inline-block;
+  background:#1b2e55;
+  padding:10px 15px;
+  margin:5px;
+  border-radius:8px;
 }
 
 .portfolio{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:20px;
-    margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
 }
 
 .portfolio img{
-    width:100%;
-    border-radius:12px;
-    transition:0.3s;
-    box-shadow:0 0 10px rgba(0,0,0,.5);
+  width:100%;
+  border-radius:10px;
+  border:2px solid #1f3b73;
 }
 
-.portfolio img:hover{
-    transform:scale(1.05);
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    margin-top:30px;
+.precos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
 }
 
 .card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    font-weight:bold;
-}
-
-footer{
-    background:#020617;
-    padding:20px;
-    text-align:center;
-    margin-top:50px;
+  background:#1b2e55;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
 }
 </style>
 </head>
@@ -74,5 +74,46 @@ footer{
 <body>
 
 <header>
-    <h1>Xr Studio</h1>
-    <p>Designer Gráfico | Instagram: <b>@diegosous
+  <h1>Xr Studio</h1>
+  <p>Designer Gráfico | Instagram: @diegosousaxr</p>
+</header>
+
+<section>
+  <h2>Serviços</h2>
+  <div class="servicos">
+    <span>Flyers esportivos</span>
+    <span>Posts para Instagram</span>
+    <span>Banners promocionais</span>
+    <span>Identidade visual básica</span>
+  </div>
+</section>
+
+<section>
+  <h2>Portfólio</h2>
+  <p>Algumas artes feitas por mim no Photoshop:</p>
+
+  <div class="portfolio">
+    <img src="img/flyer1.jpg">
+    <img src="img/flyer2.jpg">
+    <img src="img/flyer3.jpg">
+    <img src="img/flyer4.jpg">
+    <img src="img/flyer5.jpg">
+    <img src="img/flyer6.jpg">
+    <img src="img/flyer7.jpg">
+    <img src="img/flyer8.jpg">
+  </div>
+</section>
+
+<section>
+  <h2>Preços base</h2>
+
+  <div class="precos">
+    <div class="card">Flyer simples<br><strong>R$ 25</strong></div>
+    <div class="card">Post social<br><strong>R$ 30</strong></div>
+    <div class="card">Flyer esportivo<br><strong>R$ 40</strong></div>
+    <div class="card">Pacotes mensais<br><strong>Sob orçamento</strong></div>
+  </div>
+</section>
+
+</body>
+</html>

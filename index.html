@@ -5,76 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xr Studio - Designer Gráfico</title>
 
-<!-- CORES DO SITE (altere fácil aqui) -->
 <style>
 :root{
-  --cor1:#1e3c72;   /* azul */
-  --cor2:#6a11cb;   /* roxo */
+  --cor1:#1e3c72;
+  --cor2:#6a11cb;
   --botao:#00e5ff;
 }
 
-body{margin:0;font-family:Arial;background:#0f1020;color:#fff}
-header{background:linear-gradient(135deg,var(--cor1),var(--cor2));padding:40px;text-align:center}
-section{padding:40px;max-width:1000px;margin:auto}
-.btn{background:var(--botao);color:#000;padding:12px 20px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block}
-.card{background:#1a1b35;padding:20px;border-radius:10px;margin:10px 0}
-footer{text-align:center;padding:20px;background:#0a0b18;color:#aaa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1020;color:#fff}
+header{background:linear-gradient(135deg,var(--cor1),var(--cor2));padding:50px 20px;text-align:center}
+section{padding:40px 20px;max-width:1100px;margin:auto}
+.btn{background:var(--botao);color:#000;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:#1a1b35;padding:20px;border-radius:12px;text-align:center}
+.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.portfolio img{width:100%;border-radius:14px;box-shadow:0 0 12px rgba(0,0,0,.4)}
+footer{text-align:center;padding:25px;background:#0a0b18;color:#aaa}
+
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 10px rgba(0,0,0,.4)
+}
 </style>
 </head>
 <body>
 
-<!-- ===== TOPO DO SITE ===== -->
 <header>
-<h1>Xr Studio</h1>
-<p>Artes profissionais feitas no Photoshop</p>
-<a class="btn" href="https://wa.me/5589999253546">Chamar no WhatsApp</a>
+  <h1>Xr Studio</h1>
+  <p>Artes profissionais criadas no Photoshop</p>
+  <a class="btn" href="https://wa.me/5589999253546" target="_blank">Pedir orçamento</a>
 </header>
 
-<!-- ===== SOBRE ===== -->
 <section>
-<h2>Sobre mim</h2>
-<p>
-Sou designer gráfico especializado em artes para redes sociais, banners e identidade visual.
-</p>
+  <h2>Sobre mim</h2>
+  <p>
+    Sou designer gráfico especializado em artes para redes sociais, flyers esportivos, banners promocionais e eventos.
+    Trabalho com qualidade profissional usando Adobe Photoshop.
+  </p>
 </section>
 
-<!-- ===== SERVIÇOS ===== -->
 <section>
-<h2>Serviços</h2>
-<div class="card">Flyers promocionais</div>
-<div class="card">Posts para Instagram</div>
-<div class="card">Banners digitais</div>
-<div class="card">Identidade visual básica</div>
+  <h2>Serviços</h2>
+  <div class="cards">
+    <div class="card">Flyers esportivos</div>
+    <div class="card">Posts para Instagram</div>
+    <div class="card">Banners promocionais</div>
+    <div class="card">Artes para eventos</div>
+    <div class="card">Identidade visual básica</div>
+  </div>
 </section>
 
-<!-- ===== PORTFÓLIO ===== -->
 <section>
-<h2>Portfólio</h2>
-<p>Troque estes textos por imagens depois</p>
-<div class="card">Arte 1</div>
-<div class="card">Arte 2</div>
-<div class="card">Arte 3</div>
+  <h2>Portfólio</h2>
+  <p>Algumas artes feitas por mim no Photoshop:</p>
+
+  <!-- IMPORTANTE: envie as imagens com estes nomes -->
+  <!-- flyer1.png, flyer2.png, flyer3.png -->
+
+  <div class="portfolio">
+    <img src="flyer1.png" alt="Flyer esportivo campeonato">
+    <img src="flyer2.png" alt="Flyer jogador destaque">
+    <img src="flyer3.png" alt="Flyer evento junino">
+  </div>
 </section>
 
-<!-- ===== PREÇOS ===== -->
 <section>
-<h2>Preços</h2>
-<div class="card">Flyer: R$ 25</div>
-<div class="card">Post: R$ 30</div>
-<div class="card">Carrossel: R$ 40</div>
+  <h2>Preços base</h2>
+  <div class="cards">
+    <div class="card">Flyer simples – R$ 25</div>
+    <div class="card">Post social – R$ 30</div>
+    <div class="card">Flyer esportivo – R$ 40</div>
+    <div class="card">Pacotes mensais – sob orçamento</div>
+  </div>
 </section>
 
-<!-- ===== CONTATO ===== -->
 <section>
-<h2>Contato</h2>
-<p>WhatsApp: (89) 99925-3546</p>
-<p>Email: diegosousabrito237@gmail.com</p>
-<p>Instagram: @xaruto_jr</p>
+  <h2>Contato</h2>
+  <p><strong>WhatsApp:</strong> (89) 99925-3546</p>
+  <p><strong>Email:</strong> diegosousabrito237@gmail.com</p>
+  <p><strong>Instagram:</strong> @diegosousaxr</p>
 </section>
 
 <footer>
-© 2026 - Xr Studio
+  © 2026 – Xr Studio • Designer Gráfico
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/5589999253546" target="_blank">WhatsApp</a>
 
 </body>
 </html>

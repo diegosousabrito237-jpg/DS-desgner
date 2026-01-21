@@ -1,125 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xr Studio - Designer Gráfico</title>
 
 <style>
-:root{
-  --cor1:#1e3c72;
-  --cor2:#6a11cb;
-  --botao:#00e5ff;
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0e0e0e;
+    color:#fff;
 }
 
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1020;color:#fff}
-header{background:linear-gradient(135deg,var(--cor1),var(--cor2));padding:50px 20px;text-align:center}
-section{padding:40px 20px;max-width:1100px;margin:auto}
-.btn{background:var(--botao);color:#000;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
-.card{background:#1a1b35;padding:20px;border-radius:12px;text-align:center}
-.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
-.portfolio img{width:100%;border-radius:14px;box-shadow:0 0 12px rgba(0,0,0,.4)}
-footer{text-align:center;padding:25px;background:#0a0b18;color:#aaa}
+header{
+    padding:30px;
+    text-align:center;
+    background:#111;
+}
 
-.whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#25d366;
-  color:#fff;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 0 10px rgba(0,0,0,.4)
+header h1{
+    margin:0;
+    color:#00b3ff;
+}
+
+section{
+    padding:40px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    color:#00b3ff;
+    margin-bottom:20px;
+}
+
+/* PORTFOLIO GRID */
+.portfolio{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+}
+
+.portfolio img{
+    width:100%;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    border:2px solid #222;
+}
+
+.portfolio img:hover{
+    transform:scale(1.05);
+    border-color:#00b3ff;
+}
+
+/* PREÇOS */
+.precos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.preco-box{
+    background:#161616;
+    padding:20px;
+    border-radius:10px;
+    min-width:180px;
+    text-align:center;
+    border:1px solid #222;
+}
+
+footer{
+    background:#111;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    color:#aaa;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Xr Studio</h1>
-  <p>Artes profissionais criadas no Photoshop</p>
-  <a class="btn" href="https://wa.me/5589999253546" target="_blank">Pedir orçamento</a>
+    <h1>Xr Studio</h1>
+    <p>Designer Gráfico • Artes para redes sociais • Flyers • Identidade visual</p>
+    <p>Instagram: <strong>@diegosousaxr</strong></p>
 </header>
 
 <section>
-  <h2>Sobre mim</h2>
-  <p>
-    Sou designer gráfico especializado em artes para redes sociais, flyers esportivos, banners promocionais e eventos.
-    Trabalho com qualidade profissional usando Adobe Photoshop.
-  </p>
+    <h2>Serviços</h2>
+    <ul>
+        <li>Flyers esportivos</li>
+        <li>Posts para Instagram</li>
+        <li>Banners promocionais</li>
+        <li>Identidade visual básica</li>
+    </ul>
 </section>
 
 <section>
-  <h2>Serviços</h2>
-  <div class="cards">
-    <div class="card">Flyers esportivos</div>
-    <div class="card">Posts para Instagram</div>
-    <div class="card">Banners promocionais</div>
-    <div class="card">Artes para eventos</div>
-    <div class="card">Identidade visual básica</div>
-  </div>
-</section>
+    <h2>Portfólio</h2>
 
-<section>
-  <h2>Portfólio</h2>
-  <p>Algumas artes feitas por mim no Photoshop:</p>
-
-  <!-- IMPORTANTE: envie as imagens com estes nomes -->
-  <!-- flyer1.png, flyer2.png, flyer3.png -->
-
-  <div class="portfolio">
-    <div class="work">
-      <img src="img/flyer1.jpg" alt="Flyer esportivo campeonato">
-      <div class="info">
-        <strong>Flyer esportivo – Campeonato</strong>
-        <div class="tag">Photoshop</div>
-      </div>
+    <div class="portfolio">
+        <img src="img/flyer1.jpg" alt="Flyer 1">
+        <img src="img/flyer2.jpg" alt="Flyer 2">
+        <img src="img/flyer3.jpg" alt="Flyer 3">
+        <img src="img/flyer4.jpg" alt="Flyer 4">
+        <img src="img/flyer5.jpg" alt="Flyer 5">
+        <img src="img/flyer6.jpg" alt="Flyer 6">
     </div>
-
-    <div class="work">
-      <img src="img/flyer2.jpg" alt="Flyer jogador destaque">
-      <div class="info">
-        <strong>Flyer – Jogador destaque</strong>
-        <div class="tag">Photoshop</div>
-      </div>
-    </div>
-
-    <div class="work">
-      <img src="img/flyer3.jpg" alt="Flyer evento junino">
-      <div class="info">
-        <strong>Flyer – Evento junino</strong>
-        <div class="tag">Photoshop</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section>
-  <h2>Preços base</h2>
-  <div class="cards">
-    <div class="card">Flyer simples – R$ 25</div>
-    <div class="card">Post social – R$ 30</div>
-    <div class="card">Flyer esportivo – R$ 40</div>
-    <div class="card">Pacotes mensais – sob orçamento</div>
-  </div>
-</section>
+    <h2>Preços base</h2>
 
-<section>
-  <h2>Contato</h2>
-  <p><strong>WhatsApp:</strong> (89) 99925‑3546</p>
-  <p><strong>Email:</strong> diegosousabrito237@gmail.com</p>
-  <p><strong>Instagram:</strong> @diegosousaxr</p>
+    <div class="precos">
+        <div class="preco-box">Flyer simples<br><strong>R$ 25</strong></div>
+        <div class="preco-box">Post social<br><strong>R$ 30</strong></div>
+        <div class="preco-box">Flyer esportivo<br><strong>R$ 40</strong></div>
+    </div>
 </section>
 
 <footer>
-  © 2026 – Xr Studio • Designer Gráfico
+    © 2026 - Xr Studio | @diegosousaxr
 </footer>
-
-<a class="whatsapp-float" href="https://wa.me/5589999253546" target="_blank">WhatsApp</a>
 
 </body>
 </html>

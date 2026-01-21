@@ -2,37 +2,29 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Xr Studio - Designer Gráfico</title>
+<title>Xr Studio | Designer Gráfico Profissional</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 
-body{
-  background:#0e1624;
-  color:#fff;
-}
+body{background:#0e1624;color:#fff}
 
 header{
-  background:#0b1c3a;
-  padding:25px;
+  background:linear-gradient(135deg,#0b1c3a,#122b55);
+  padding:40px 20px;
   text-align:center;
+  animation:fade 1s;
 }
 
 section{
-  padding:40px 20px;
   max-width:1100px;
   margin:auto;
+  padding:40px 20px;
+  animation:fade 1s;
 }
 
-h2{
-  margin-bottom:15px;
-  color:#4da3ff;
-}
+h2{color:#4da3ff;margin-bottom:15px}
 
 .servicos span{
   display:inline-block;
@@ -53,13 +45,14 @@ h2{
   width:100%;
   border-radius:10px;
   border:2px solid #1f3b73;
+  transition:.3s;
 }
+.portfolio img:hover{transform:scale(1.05)}
 
-.precos{
+.precos,.contato{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:15px;
-  margin-top:20px;
 }
 
 .card{
@@ -68,52 +61,145 @@ h2{
   border-radius:10px;
   text-align:center;
 }
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input,textarea,select,button{
+  padding:10px;
+  border-radius:6px;
+  border:none;
+}
+
+button{
+  background:#25d366;
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+footer{
+  background:#0b1c3a;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+
+/* WhatsApp botão */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#000;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 0 10px #000;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>Xr Studio</h1>
-  <p>Designer Gráfico | Instagram: @diegosousaxr</p>
+  <p>Designer Gráfico Profissional</p>
+  <p>Instagram: @diegosousaxr</p>
 </header>
 
 <section>
-  <h2>Serviços</h2>
-  <div class="servicos">
-    <span>Flyers esportivos</span>
-    <span>Posts para Instagram</span>
-    <span>Banners promocionais</span>
-    <span>Identidade visual básica</span>
-  </div>
+<h2>Sobre mim</h2>
+<p>
+Sou designer gráfico especializado em artes para redes sociais, flyers esportivos e banners promocionais.
+Trabalho com Photoshop entregando artes modernas, criativas e prontas para atrair clientes.
+</p>
 </section>
 
 <section>
-  <h2>Portfólio</h2>
-  <p>Algumas artes feitas por mim no Photoshop:</p>
-
-  <div class="portfolio">
-    <img src="img/flyer1.jpg">
-    <img src="img/flyer2.jpg">
-    <img src="img/flyer3.jpg">
-    <img src="img/flyer4.jpg">
-    <img src="img/flyer5.jpg">
-    <img src="img/flyer6.jpg">
-    <img src="img/flyer7.jpg">
-    <img src="img/flyer8.jpg">
-  </div>
+<h2>Serviços</h2>
+<div class="servicos">
+<span>Flyers esportivos</span>
+<span>Posts para Instagram</span>
+<span>Banners promocionais</span>
+<span>Identidade visual básica</span>
+</div>
 </section>
 
 <section>
-  <h2>Preços base</h2>
+<h2>Portfólio</h2>
+<p>Algumas artes feitas por mim no Photoshop:</p>
 
-  <div class="precos">
-    <div class="card">Flyer simples<br><strong>R$ 25</strong></div>
-    <div class="card">Post social<br><strong>R$ 30</strong></div>
-    <div class="card">Flyer esportivo<br><strong>R$ 40</strong></div>
-    <div class="card">Pacotes mensais<br><strong>Sob orçamento</strong></div>
-  </div>
+<div class="portfolio">
+<img src="img/flyer1.jpg">
+<img src="img/flyer2.jpg">
+<img src="img/flyer3.jpg">
+<img src="img/flyer4.jpg">
+<img src="img/flyer5.jpg">
+<img src="img/flyer6.jpg">
+<img src="img/flyer7.jpg">
+<img src="img/flyer8.jpg">
+</div>
 </section>
+
+<section>
+<h2>Preços base</h2>
+<div class="precos">
+<div class="card">Flyer simples<br><b>R$ 25</b></div>
+<div class="card">Post social<br><b>R$ 30</b></div>
+<div class="card">Flyer esportivo<br><b>R$ 40</b></div>
+<div class="card">Pacotes mensais<br><b>Sob orçamento</b></div>
+</div>
+</section>
+
+<section>
+<h2>Contato rápido</h2>
+
+<form onsubmit="enviarWhats(event)">
+<input id="nome" placeholder="Seu nome" required>
+<input id="zap" placeholder="Seu WhatsApp" required>
+<select id="servico">
+<option>Flyer</option>
+<option>Post Instagram</option>
+<option>Banner</option>
+<option>Outro</option>
+</select>
+<textarea id="msg" placeholder="Descreva o que precisa" required></textarea>
+<button>Enviar no WhatsApp</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 Xr Studio - Designer Gráfico
+</footer>
+
+<a class="whatsapp" href="https://wa.me/55999253546" target="_blank">💬</a>
+
+<script>
+function enviarWhats(e){
+ e.preventDefault();
+
+ let nome=document.getElementById("nome").value;
+ let zap=document.getElementById("zap").value;
+ let serv=document.getElementById("servico").value;
+ let msg=document.getElementById("msg").value;
+
+ let texto=`Olá, me chamo ${nome}. Meu WhatsApp é ${zap}. Quero um serviço de ${serv}. Detalhes: ${msg}`;
+
+ let url=`https://wa.me/55999253546?text=${encodeURIComponent(texto)}`;
+
+ window.open(url,"_blank");
+}
+</script>
 
 </body>
 </html>

@@ -1,205 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Xr Studio | Designer Gráfico Profissional</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XR Design Studio | Designer Gráfico Profissional</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-
-body{background:#0e1624;color:#fff}
-
-header{
-  background:linear-gradient(135deg,#0b1c3a,#122b55);
-  padding:40px 20px;
-  text-align:center;
-  animation:fade 1s;
+:root{
+  --cor1:#1e3c72;
+  --cor2:#6a11cb;
+  --botao:#00e5ff;
 }
 
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-  animation:fade 1s;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1020;color:#fff}
+header{background:linear-gradient(135deg,var(--cor1),var(--cor2));padding:50px 20px;text-align:center}
+section{padding:40px 20px;max-width:1100px;margin:auto}
+.btn{background:var(--botao);color:#000;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:#1a1b35;padding:20px;border-radius:12px;text-align:center}
+.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.portfolio img{width:100%;border-radius:14px;box-shadow:0 0 12px rgba(0,0,0,.4)}
+footer{text-align:center;padding:25px;background:#0a0b18;color:#aaa}
 
-h2{color:#4da3ff;margin-bottom:15px}
-
-.servicos span{
-  display:inline-block;
-  background:#1b2e55;
-  padding:10px 15px;
-  margin:5px;
-  border-radius:8px;
-}
-
-.portfolio{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:20px;
-}
-
-.portfolio img{
-  width:100%;
-  border-radius:10px;
-  border:2px solid #1f3b73;
-  transition:.3s;
-}
-.portfolio img:hover{transform:scale(1.05)}
-
-.precos,.contato{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-
-.card{
-  background:#1b2e55;
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-}
-
-form{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-input,textarea,select,button{
-  padding:10px;
-  border-radius:6px;
-  border:none;
-}
-
-button{
-  background:#25d366;
-  color:#000;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-footer{
-  background:#0b1c3a;
-  text-align:center;
-  padding:20px;
-  margin-top:30px;
-}
-
-/* WhatsApp botão */
-.whatsapp{
+.whatsapp-float{
   position:fixed;
-  bottom:20px;
   right:20px;
+  bottom:20px;
   background:#25d366;
-  color:#000;
-  padding:15px 18px;
-  border-radius:50%;
-  font-size:22px;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
   text-decoration:none;
-  box-shadow:0 0 10px #000;
-}
-
-@keyframes fade{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+  font-weight:bold;
+  box-shadow:0 0 10px rgba(0,0,0,.4)
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Xr Studio</h1>
-  <p>Designer Gráfico Profissional</p>
-  <p>Instagram: @diegosousaxr</p>
+  io</h1>
+  <p>Artes profissionais criadas no Photoshop</p>
+  <a class="btn" href="https://wa.me/5589999253546" target="_blank">Pedir orçamento</a>
 </header>
 
 <section>
-<h2>Sobre mim</h2>
-<p>
-Sou designer gráfico especializado em artes para redes sociais, flyers esportivos e banners promocionais.
-Trabalho com Photoshop entregando artes modernas, criativas e prontas para atrair clientes.
-</p>
+  <h2>Sobre mim</h2>
+  <p>
+    Sou designer gráfico especializado em artes para redes sociais, flyers esportivos, banners promocionais e eventos.
+    Trabalho com qualidade profissional usando Adobe Photoshop.
+  </p>
 </section>
 
 <section>
-<h2>Serviços</h2>
-<div class="servicos">
-<span>Flyers esportivos</span>
-<span>Posts para Instagram</span>
-<span>Banners promocionais</span>
-<span>Identidade visual básica</span>
-</div>
+  <h2>Serviços</h2>
+  <div class="cards">
+    <div class="card">Flyers esportivos</div>
+    <div class="card">Posts para Instagram</div>
+    <div class="card">Banners promocionais</div>
+    <div class="card">Artes para eventos</div>
+    <div class="card">Identidade visual básica</div>
+  </div>
 </section>
 
 <section>
-<h2>Portfólio</h2>
-<p>Algumas artes feitas por mim no Photoshop:</p>
+  <h2>Portfólio</h2>
+  <p>Algumas artes feitas por mim no Photoshop:</p>
 
-<div class="portfolio">
-<img src="img/flyer1.jpg">
-<img src="img/flyer2.jpg">
-<img src="img/flyer3.jpg">
-<img src="img/flyer4.jpg">
-<img src="img/flyer5.jpg">
-<img src="img/flyer6.jpg">
-<img src="img/flyer7.jpg">
-<img src="img/flyer8.jpg">
-</div>
+  <!-- IMPORTANTE: envie as imagens com estes nomes -->
+  <!-- flyer1.png, flyer2.png, flyer3.png -->
+
+  <div class="portfolio">
+    <div class="work">
+      <img src="img/flyer1.jpg" alt="Flyer esportivo campeonato">
+      <div class="info">
+        <strong>Flyer esportivo – Campeonato</strong>
+        <div class="tag">Photoshop</div>
+      </div>
+    </div>
+
+    <div class="work">
+      <img src="img/flyer2.jpg" alt="Flyer jogador destaque">
+      <div class="info">
+        <strong>Flyer – Jogador destaque</strong>
+        <div class="tag">Photoshop</div>
+      </div>
+    </div>
+
+    <div class="work">
+      <img src="img/flyer3.jpg" alt="Flyer evento junino">
+      <div class="info">
+        <strong>Flyer – Evento junino</strong>
+        <div class="tag">Photoshop</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>Preços base</h2>
-<div class="precos">
-<div class="card">Flyer simples<br><b>R$ 25</b></div>
-<div class="card">Post social<br><b>R$ 30</b></div>
-<div class="card">Flyer esportivo<br><b>R$ 40</b></div>
-<div class="card">Pacotes mensais<br><b>Sob orçamento</b></div>
-</div>
+  <h2>Preços base</h2>
+  <div class="cards">
+    <div class="card">Flyer simples – R$ 25</div>
+    <div class="card">Post social – R$ 30</div>
+    <div class="card">Flyer esportivo – R$ 40</div>
+    <div class="card">Pacotes mensais – sob orçamento</div>
+  </div>
 </section>
 
 <section>
-<h2>Contato rápido</h2>
-
-<form onsubmit="enviarWhats(event)">
-<input id="nome" placeholder="Seu nome" required>
-<input id="zap" placeholder="Seu WhatsApp" required>
-<select id="servico">
-<option>Flyer</option>
-<option>Post Instagram</option>
-<option>Banner</option>
-<option>Outro</option>
-</select>
-<textarea id="msg" placeholder="Descreva o que precisa" required></textarea>
-<button>Enviar no WhatsApp</button>
-</form>
-
+  <h2>Contato</h2>
+  <p><strong>WhatsApp:</strong> (89) 99925‑3546</p>
+  <p><strong>Email:</strong> diegosousabrito237@gmail.com</p>
+  <p><strong>Instagram: @diegosousaxr</p>
+<p>Artes que vendem. Design que
 </section>
 
 <footer>
-© 2026 Xr Studio - Designer Gráfico
+  © 2026 – Xr Studio • Designer Gráfico
 </footer>
 
-<a class="whatsapp" href="https://wa.me/55999253546" target="_blank">💬</a>
-
-<script>
-function enviarWhats(e){
- e.preventDefault();
-
- let nome=document.getElementById("nome").value;
- let zap=document.getElementById("zap").value;
- let serv=document.getElementById("servico").value;
- let msg=document.getElementById("msg").value;
-
- let texto=`Olá, me chamo ${nome}. Meu WhatsApp é ${zap}. Quero um serviço de ${serv}. Detalhes: ${msg}`;
-
- let url=`https://wa.me/55999253546?text=${encodeURIComponent(texto)}`;
-
- window.open(url,"_blank");
-}
-</script>
+<a class="whatsapp-float" href="https://wa.me/5589999253546" target="_blank">WhatsApp</a>
 
 </body>
 </html>

@@ -1,146 +1,601 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>XR Design Studio | Designer Gráfico Profissional</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XR Design Studio | Designer Gráfico Profissional</title>
+  <style>
+    :root {
+      --bg: #07080f;
+      --bg-soft: #101322;
+      --card: #15192a;
+      --primary: #8b5cf6;
+      --secondary: #22d3ee;
+      --text: #f8fafc;
+      --muted: #a1a1aa;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .35);
+    }
 
-<style>
-:root{
-  --cor1:#1e3c72;
-  --cor2:#6a11cb;
-  --botao:#00e5ff;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f1020;color:#fff}
-header{background:linear-gradient(135deg,var(--cor1),var(--cor2));padding:50px 20px;text-align:center}
-section{padding:40px 20px;max-width:1100px;margin:auto}
-.btn{background:var(--botao);color:#000;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;display:inline-block}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
-.card{background:#1a1b35;padding:20px;border-radius:12px;text-align:center}
-.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
-.portfolio img{width:100%;border-radius:14px;box-shadow:0 0 12px rgba(0,0,0,.4)}
-footer{text-align:center;padding:25px;background:#0a0b18;color:#aaa}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top left, rgba(139, 92, 246, .25), transparent 35%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-.whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#25d366;
-  color:#fff;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 0 10px rgba(0,0,0,.4)
-}
-</style>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 8, 15, .75);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .menu {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .menu a:hover {
+      color: var(--white);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      box-shadow: 0 12px 34px rgba(34, 211, 238, .22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .hero {
+      padding: 92px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, .12);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: var(--white);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .mockup {
+      position: relative;
+      min-height: 420px;
+      border-radius: 32px;
+      padding: 24px;
+      background: linear-gradient(150deg, rgba(139, 92, 246, .28), rgba(34, 211, 238, .10));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .mockup::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 26px;
+    }
+
+    .mockup-card {
+      position: relative;
+      background: rgba(7, 8, 15, .72);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 24px;
+      padding: 26px;
+      margin-top: 72px;
+    }
+
+    .mockup-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .mockup-line {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      margin: 12px 0;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(34, 211, 238, .12);
+      color: var(--secondary);
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .ia-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(139, 92, 246, .20), rgba(34, 211, 238, .10));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .ia-chat {
+      background: rgba(7, 8, 15, .72);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      padding: 20px;
+    }
+
+    .msg {
+      padding: 14px 16px;
+      border-radius: 18px;
+      margin-bottom: 12px;
+      font-size: .95rem;
+    }
+
+    .msg.bot {
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+
+    .msg.user {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      margin-left: 38px;
+    }
+
+    .ia-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .ia-form input {
+      flex: 1;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: white;
+      border-radius: 999px;
+      padding: 13px 16px;
+      outline: none;
+    }
+
+    .ia-form button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0 18px;
+      font-weight: 800;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .work {
+      min-height: 260px;
+      border-radius: 26px;
+      padding: 22px;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(135deg, rgba(139, 92, 246, .8), rgba(34, 211, 238, .35));
+      overflow: hidden;
+      position: relative;
+    }
+
+    .work:nth-child(2) {
+      background: linear-gradient(135deg, rgba(236, 72, 153, .75), rgba(139, 92, 246, .45));
+    }
+
+    .work:nth-child(3) {
+      background: linear-gradient(135deg, rgba(14, 165, 233, .75), rgba(16, 185, 129, .40));
+    }
+
+    .work::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.14);
+      top: -50px;
+      right: -50px;
+    }
+
+    .work-info {
+      position: relative;
+      background: rgba(7, 8, 15, .55);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 16px;
+      width: 100%;
+    }
+
+    .work-info small {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, rgba(139, 92, 246, .22), rgba(34, 211, 238, .12));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 34px;
+      padding: 50px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      font-size: 1.6rem;
+      box-shadow: 0 14px 35px rgba(37, 211, 102, .35);
+      z-index: 20;
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .cards,
+      .portfolio,
+      .ia-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .mockup {
+        min-height: 330px;
+      }
+
+      .cta {
+        padding: 34px 22px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">XR <span>Design</span></a>
 
-<header>
-  <h1>XR Design Studio</h1>
-  <p>Artes profissionais criadas no Photoshop</p>
-  <a class="btn" href="https://wa.me/5589999253546" target="_blank">Pedir orçamento</a>
-</header>
+      <nav class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+        <a href="#ia">IA</a>
+      </nav>
 
-<section>
-  <h2>Sobre mim</h2>
-  <p>
-    Sou designer gráfico especializado em artes para redes sociais, flyers esportivos, banners promocionais e eventos.
-    Trabalho com qualidade profissional usando Adobe Photoshop.
-  </p>
-</section>
-
-<section>
-  <h2>Serviços</h2>
-  <div class="cards">
-    <div class="card">Flyers esportivos</div>
-    <div class="card">Posts para Instagram</div>
-    <div class="card">Banners promocionais</div>
-    <div class="card">Artes para eventos</div>
-    <div class="card">Identidade visual básica</div>
-  </div>
-</section>
-
-<section>
-  <h2>Portfólio</h2>
-  <p>Algumas artes feitas por mim no Photoshop:</p>
-
-  <!-- IMPORTANTE: envie as imagens com estes nomes -->
-  <!-- flyer1.png, flyer2.png, flyer3.png -->
-
-  <div class="portfolio">
-    <div class="work">
-      <img src="img/flyer1.jpg" alt="Flyer esportivo campeonato">
-      <div class="info">
-        <strong>Flyer esportivo – Campeonato</strong>
-        <div class="tag">Photoshop</div>
-      </div>
+      <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank">Fale comigo</a>
     </div>
+  </header>
 
-    <div class="work">
-      <img src="img/flyer2.jpg" alt="Flyer jogador destaque">
-      <div class="info">
-        <strong>Flyer – Jogador destaque</strong>
-        <div class="tag">Photoshop</div>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Designer gráfico profissional</span>
+          <h1>Design moderno para sua marca vender mais.</h1>
+          <p>Crio identidades visuais, artes para redes sociais, banners, flyers e materiais digitais com aparência profissional e foco em resultado.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Solicitar orçamento</a>
+            <a class="btn btn-ghost" href="#portfolio">Ver trabalhos</a>
+          </div>
+        </div>
+
+        <div class="mockup" aria-label="Prévia de design">
+          <div class="mockup-card">
+            <h3>Identidade visual premium</h3>
+            <div class="mockup-line" style="width: 90%"></div>
+            <div class="mockup-line" style="width: 70%"></div>
+            <div class="mockup-line" style="width: 82%"></div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="work">
-      <img src="img/flyer3.jpg" alt="Flyer evento junino">
-      <div class="info">
-        <strong>Flyer – Evento junino</strong>
-        <div class="tag">Photoshop</div>
+    <section id="servicos">
+      <div class="container">
+        <div class="section-title">
+          <h2>Serviços</h2>
+          <p>Soluções visuais para deixar seu negócio com uma imagem mais forte, bonita e profissional.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Identidade visual</h3>
+            <p>Criação de logotipo, paleta de cores, tipografia e elementos visuais para sua marca.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">▣</div>
+            <h3>Social media</h3>
+            <p>Posts, stories, capas e artes profissionais para Instagram, Facebook e WhatsApp.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">◈</div>
+            <h3>Materiais digitais</h3>
+            <p>Banners, flyers, cartões, thumbnails, anúncios e peças promocionais para divulgação.</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section id="ia">
+      <div class="container">
+        <div class="ia-box">
+          <div>
+            <span class="badge">Novo recurso com IA</span>
+            <h2>Assistente inteligente para clientes</h2>
+            <p>Adicione uma IA ao seu site para responder dúvidas, explicar seus serviços e direcionar o cliente para o WhatsApp automaticamente.</p>
+            <p style="color: var(--muted); margin-top: 12px;">Exemplo: o cliente pergunta sobre preço, prazo ou tipos de artes, e a IA responde de forma rápida e profissional.</p>
+          </div>
+
+          <div class="ia-chat">
+            <div class="msg bot">Olá! Sou a IA da XR Design. Como posso ajudar?</div>
+            <div class="msg user">Quero uma arte para Instagram.</div>
+            <div class="msg bot">Perfeito! Posso te ajudar com posts, stories, banners e identidade visual. Clique no WhatsApp para solicitar orçamento.</div>
+
+            <form class="ia-form" onsubmit="responderIA(event)">
+              <input id="perguntaIA" type="text" placeholder="Digite sua pergunta..." />
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <h2>Portfólio</h2>
+          <p>Alguns estilos de projetos que podem ser desenvolvidos para sua marca.</p>
+        </div>
+
+        <div class="portfolio">
+          <article class="work">
+            <div class="work-info">
+              <small>Branding</small>
+              <h3>Marca profissional</h3>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-info">
+              <small>Social media</small>
+              <h3>Posts para redes</h3>
+            </div>
+          </article>
+
+          <article class="work">
+            <div class="work-info">
+              <small>Publicidade</small>
+              <h3>Artes promocionais</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="cta">
+          <h2>Vamos criar algo incrível?</h2>
+          <p>Entre em contato agora e peça seu orçamento sem compromisso.</p>
+          <a class="btn btn-primary" href="https://wa.me/5500000000000" target="_blank">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 XR Design Studio. Todos os direitos reservados.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section>
-  <h2>Preços base</h2>
-  <div class="cards">
-    <div class="card">Flyer simples – R$ 25</div>
-    <div class="card">Post social – R$ 30</div>
-    <div class="card">Flyer esportivo – R$ 40</div>
-    <div class="card">Pacotes mensais – sob orçamento</div>
-  </div>
-</section>
+  <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank" aria-label="WhatsApp">☘</a>
+  <script>
+    function responderIA(event) {
+      event.preventDefault();
 
-<section>
-  <h2>Contato</h2>
-  <p><strong>WhatsApp:</strong> (89) 99925‑3546</p>
-  <p><strong>Email:</strong> diegosousabrito237@gmail.com</p>
-  <p><strong>Instagram: @diegosousaxr</p>
-<p>Artes que vendem. Design que impressiona.</p>
-</section>
+      const input = document.getElementById('perguntaIA');
+      const texto = input.value.trim();
+      const chat = document.querySelector('.ia-chat');
 
-<footer>
-  © 2026 – Xr Studio • Designer Gráfico
-</footer>
+      if (!texto) return;
 
-<a class="whatsapp-float" href="https://wa.me/5589999253546" target="_blank">WhatsApp</a>
+      const pergunta = document.createElement('div');
+      pergunta.className = 'msg user';
+      pergunta.textContent = texto;
+      chat.insertBefore(pergunta, document.querySelector('.ia-form'));
 
-</body>
-</html>
-<footer>
-© 2026 XR Design Studio
-</footer>
+      const resposta = document.createElement('div');
+      resposta.className = 'msg bot';
+      resposta.textContent = 'Obrigado pela pergunta! Para orçamento, prazo e detalhes do seu projeto, clique no botão do WhatsApp e fale comigo agora.';
+      chat.insertBefore(resposta, document.querySelector('.ia-form'));
 
-<script>
-window.embeddedChatbotConfig = {
-chatbotId: "gBi6HVMqsSmoo04eqlwl0",
-domain: "www.chatbase.co"
-}
-</script>
-
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="gBi6HVMqsSmoo04eqlwl0"
-domain="www.chatbase.co"
-defer>
-</script>
-
+      input.value = '';
+    }
+  </script>
 </body>
 </html>

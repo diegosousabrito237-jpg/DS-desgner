@@ -511,14 +511,12 @@
           </div>
 
           <div class="ia-chat">
-            <div class="msg bot">Olá! Sou a IA da XR Design. Como posso ajudar?</div>
-            <div class="msg user">Quero uma arte para Instagram.</div>
-            <div class="msg bot">Perfeito! Posso te ajudar com posts, stories, banners e identidade visual. Clique no WhatsApp para solicitar orçamento.</div>
-
-            <form class="ia-form" onsubmit="responderIA(event)">
-              <input id="perguntaIA" type="text" placeholder="Digite sua pergunta..." />
-              <button type="submit">Enviar</button>
-            </form>
+            <iframe
+              src="https://www.chatbase.co/chatbot-iframe/gBi6HVMqsSmoo04eqlwl0"
+              width="100%"
+              style="height: 520px; border: none; border-radius: 24px; background: #000;"
+              frameborder="0">
+            </iframe>
           </div>
         </div>
       </div>
@@ -575,31 +573,7 @@
 
   <a class="whatsapp" href="https://wa.me/55988117440" target="_blank" aria-label="WhatsApp">☘</a>
   <script>
-    function responderIA(event) {
-      event.preventDefault();
-
-      const input = document.getElementById('perguntaIA');
-      const texto = input.value.trim();
-      const chat = document.querySelector('.ia-chat');
-
-      if (!texto) return;
-
-      const pergunta = document.createElement('div');
-      pergunta.className = 'msg user';
-      pergunta.textContent = texto;
-      chat.insertBefore(pergunta, document.querySelector('.ia-form'));
-
-      const resposta = document.createElement('div');
-      resposta.className = 'msg bot';
-      resposta.textContent = 'Obrigado pela pergunta! Para orçamento, prazo e detalhes do seu projeto, clique no botão do WhatsApp e fale comigo agora.';
-      chat.insertBefore(resposta, document.querySelector('.ia-form'));
-
-      input.value = '';
-    }
-  </script>
-
-  <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="gBi6HVMqsSmoo04eqlwl0";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
- </script>
+  </script>
 </body>
 </html>
